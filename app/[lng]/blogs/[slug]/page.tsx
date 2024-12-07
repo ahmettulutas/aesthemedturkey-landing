@@ -1,4 +1,4 @@
-import Paragraph from '@/components/text-reveal';
+import { RevealText } from '@/components/text-reveal';
 
 export default function BlogDetailPage({ params }: { params: { slug: string } }) {
   const longText =
@@ -9,7 +9,7 @@ export default function BlogDetailPage({ params }: { params: { slug: string } })
       <div className='h-[100vh]' />
 
       {/* Paragraph component for the text reveal */}
-      <Paragraph paragraph={longText} />
+      <RevealText paragraph={longText} />
 
       {/* Additional spacer divs for scrolling */}
       <div className='h-[100vh]' />

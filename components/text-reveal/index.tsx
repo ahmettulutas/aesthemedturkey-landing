@@ -7,7 +7,7 @@ interface ParagraphProps {
   paragraph: string;
 }
 
-export default function Paragraph({ paragraph }: ParagraphProps) {
+export function RevealText({ paragraph }: ParagraphProps) {
   const container = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: container,

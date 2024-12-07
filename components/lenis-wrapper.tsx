@@ -1,16 +1,13 @@
 'use client';
-import { ReactNode, useEffect } from 'react';
-import Lenis from 'lenis';
-export function LenisWrapper({ children }: { children: ReactNode }) {
+import { useEffect } from 'react';
+
+export function LenisWrapper() {
   useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
+    (async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
   }, []);
-  return children;
+
+  return <div />;
 }
